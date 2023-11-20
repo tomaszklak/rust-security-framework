@@ -3,7 +3,7 @@ use core_foundation_sys::base::{CFAllocatorRef, CFTypeID, OSStatus};
 use core_foundation_sys::data::CFDataRef;
 #[cfg(target_os = "macos")]
 use core_foundation_sys::dictionary::CFDictionaryRef;
-#[cfg(any(target_os = "macos", target_os = "ios"))]
+#[cfg(any(target_os = "macos", target_os = "ios", target_os = "tvos"))]
 use core_foundation_sys::error::CFErrorRef;
 use core_foundation_sys::string::CFStringRef;
 

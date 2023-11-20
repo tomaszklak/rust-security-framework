@@ -16,7 +16,7 @@ use std::ptr;
 
 use crate::base::{Error, Result};
 use crate::cvt;
-#[cfg(any(feature = "OSX_10_12", target_os = "ios"))]
+#[cfg(any(feature = "OSX_10_12", target_os = "ios", target_os = "tvos"))]
 use crate::key;
 #[cfg(target_os = "macos")]
 use crate::os::macos::keychain::SecKeychain;

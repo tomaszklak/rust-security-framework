@@ -32,7 +32,7 @@ extern "C" {
     pub static kSecAttrKeyClassSymmetric: CFStringRef;
 
     pub static kSecUseKeychain: CFStringRef;
-    #[cfg(any(feature = "OSX_10_15", target_os = "ios"))]
+    #[cfg(any(feature = "OSX_10_15", target_os = "ios", target_os = "tvos"))]
     pub static kSecUseDataProtectionKeychain: CFStringRef;
     #[cfg(any(feature = "OSX_10_12", target_os = "ios"))]
     pub static kSecAttrTokenID: CFStringRef;

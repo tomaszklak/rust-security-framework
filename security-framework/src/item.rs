@@ -562,7 +562,7 @@ impl ItemAddOptions {
 
         if let Some(location) = &self.location {
             match location {
-                #[cfg(any(feature = "OSX_10_15", target_os = "ios"))]
+                #[cfg(any(feature = "OSX_10_15", target_os = "ios", target_os = "tvos"))]
                 Location::DataProtectionKeychain => {
                     dict.add(
                         &unsafe { kSecUseDataProtectionKeychain }.to_void(),
@@ -641,7 +641,7 @@ pub enum Location {
     /// This keychain requires the calling binary to be codesigned with
     /// entitlements for the KeychainAccessGroups it is supposed to
     /// access.
-    #[cfg(any(feature = "OSX_10_15", target_os = "ios"))]
+    #[cfg(any(feature = "OSX_10_15", target_os = "ios", target_os = "tvos"))]
     DataProtectionKeychain,
     /// Store the key in the default file-based keychain. On macOS, defaults to
     /// the Login keychain.
